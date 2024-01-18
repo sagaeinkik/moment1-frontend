@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moment 1 | Frontend</title>
+    <title>Bilder | Moment 1 Frontend</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/hamburgare.js" defer></script>
 </head>
 
 <body>
@@ -15,8 +16,8 @@
             <div class="desktop-nav">
                 <nav class="desktop-menu">
                     <ul>
-                        <li class="menu-items" aria-current="page"><a href="index.html">Start</a></li>
-                        <li class="menu-items"><a href="images.html">Bilder</a></li>
+                        <li class="menu-items"><a href="index.html">Start</a></li>
+                        <li class="menu-items"><a href="images.html" aria-current="page">Bilder</a></li>
                         <li class="menu-items"><a href="process.html">Arbetsprocess</a></li>
                     </ul>
                 </nav>
@@ -30,16 +31,93 @@
                 </button>
                 <nav class="mobile-menu">
                     <ul>
-                        <li class="menu-items" aria-current="page"><a href="index.html">Start</a></li>
-                        <li class="menu-items"><a href="images.html">Bilder</a></li>
+                        <li class="menu-items"><a href="index.html">Start</a></li>
+                        <li class="menu-items"><a href="images.html" aria-current="page">Bilder</a></li>
                         <li class="menu-items"><a href="process.html">Arbetsprocess</a></li>
                     </ul>
                 </nav>
             </div> <!-- Slut på mobile-nav -->
         </header>
         <main>
-            <h1>Hej</h1>
+            <div class="text-content">
+                <h1>Bilder</h1>
+                <p class="no-top-margin">Här följer krimskrams man hittar i min lägenhet. Vissa kanske känner igen
+                    min katt Ester (ibland Esther, beroende på vad jag känner för), som brukar göra cameos på
+                    lektionerna. Jag önskar personligen att hon hade hetat nå coolare, som Sauron, men hon lystrar
+                    tyvärr redan till Ester så det finns inget jag kan göra.</p>
+                <!-- Bild 1 -->
+                <picture>
+                    <!-- Stora skärmar -->
+                    <source media="(min-width: 700px)" srcset="bilder/P1015375.jpg?as=avif&width=1100"
+                        type="image/avif">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015375.jpg?as=webp&width=1100"
+                        type="image/webp">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015375.jpg?width=1100" type="image/jpg">
+                    <!-- Små skärmar -->
+                    <source media="(max-width: 700px)" srcset="bilder/P1015375.jpg?as=avif&width=700" type="image/avif">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015375.jpg?as=webp&width=700" type="image/webp">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015375.jpg?width=700" type="image/jpg">
+                    <img src="bilder/P1015375.jpg?width=1100" alt="En sköldpaddsfärgad katt">
+                </picture>
+                <!-- Bild 2 -->
+                <picture>
+                    <!-- Stora skärmar -->
+                    <source media="(min-width: 700px)" srcset="bilder/P1015388.jpg?as=avif&width=1100"
+                        type="image/avif">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015388.jpg?as=webp&width=1100"
+                        type="image/webp">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015388.jpg?as=jpg&width=1100" type="image/jpg">
+                    <!-- Små skärmar -->
+                    <source media="(max-width: 700px)" srcset="bilder/P1015388.jpg?as=avif&width=700" type="image/avif">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015388.jpg?as=webp&width=700" type="image/webp">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015388.jpg?as=jpg&width=700" type="image/jpg">
+                    <img src="bilder/P1015388.jpg?width=1100" alt="Hedera Helix-blad">
+                </picture>
+                <!-- Bild 3 -->
+                <picture>
+                    <source media="(min-width: 700px)" srcset="bilder/P1015392.jpg?as=avif&width=700" type="image/avif">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015392.jpg?as=webp&width=700" type="image/webp">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015392.jpg?as=jpg&width=700" type="image/jpg">
+                    <!-- Små skärmar -->
+                    <source media="(max-width: 700px)" srcset="bilder/P1015392.jpg?as=avif&width=700" type="image/avif">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015392.jpg?as=webp&width=700" type="image/webp">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015392.jpg?as=jpg&width=700" type="image/jpg">
+                    <img src="bilder/P1015392.jpg?width=1100" alt="Ett brunt träns">
+                </picture>
+                <!-- Bild 4 -->
+                <picture>
+                    <!-- Stora skärmar -->
+                    <source media="(min-width: 700px)" srcset="bilder/P1015400.jpg?as=avif&width=1100"
+                        type="image/avif">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015400.jpg?as=webp&width=1100"
+                        type="image/webp">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015400.jpg?as=jpg&width=1100" type="image/jpg">
+                    <!-- Små skärmar -->
+                    <source media="(max-width: 700px)" srcset="bilder/P1015400.jpg?as=avif&width=700" type="image/avif">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015400.jpg?as=webp&width=700" type="image/webp">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015400.jpg?as=jpg&width=700" type="image/jpg">
+                    <img src="bilder/P1015400.jpg?width=1100" alt="Några böcker i en bokhylla">
+                </picture>
+                <picture>
+                    <!-- Stora skärmar -->
+                    <source media="(min-width: 700px)" srcset="bilder/P1015431.jpg?as=avif&width=1100"
+                        type="image/avif">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015431.jpg?as=webp&width=1100"
+                        type="image/webp">
+                    <source media="(min-width: 700px)" srcset="bilder/P1015431.jpg?as=jpg&width=1100" type="image/jpg">
+                    <!-- Små skärmar -->
+                    <source media="(max-width: 700px)" srcset="bilder/P1015431.jpg?as=avif&width=700" type="image/avif">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015431.jpg?as=webp&width=700" type="image/webp">
+                    <source media="(max-width: 700px)" srcset="bilder/P1015431.jpg?as=jpg&width=700" type="image/jpg">
+                    <img src="bilder/P1015431.jpg?width=1100"
+                        alt="Direktbildskamera av märket Instax, med en bild uppställd bredvid. Den utskrivna bilden föreställer en katt och en man.">
+                </picture>
+            </div>
         </main>
+        <footer>
+            <img src="bilder/signature-gradient.svg" alt="signatur">
+            <p>Webbplats skapad av Saga Einarsdotter Kikajon för kursen DT211G - Frontend-baserad webbutveckling</p>
+        </footer>
     </div> <!-- Slut på wrapper -->
 </body>
 

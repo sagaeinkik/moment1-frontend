@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Sometype+Mono&display=swap');
+:root {
+    --pastelgreen: #d1e5a5;
+    --pastelorange: #f7d890;
+}
+
 * {
     margin: 0; 
     padding: 0; 
@@ -7,14 +13,163 @@
 body { 
     width: 100%; 
     max-width: 1700px;
+    min-height: 100vh;
+    font-family: "Sometype Mono", monospace;
+    overflow-x: hidden;
+    font-size: 1.1em;
+    line-height: 1.9;
+}
+
+.wrapper {
+    overflow-x: hidden;
 }
 
 header {
+    padding: 0 1em;
     display: flex; 
     width: 100%; 
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
 }
 
 #logotyp {
-    max-width: 250px;
+    width: 165px;
+}
+
+
+nav ul li {
+    list-style: none;
+    margin: 1em;
+}
+nav ul li a {
+    padding: 1em;
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: 0.5s ease;
+}
+nav ul li a:hover {
+    color: black;
+    border-radius: 15px;
+    background-image: linear-gradient(to right, var(--pastelgreen), var(--pastelorange));
+    text-decoration: underline;
+}
+
+/* Desktop-meny */
+
+header .desktop-nav ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* Mobilmenu */
+div.mobile-nav button {
+    width: fit-content;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+    position: fixed;
+    z-index: 1;
+    top: 1.5em;
+    right: 2em;
+}
+div.mobile-nav button .burger-bar {
+    display: block;
+    width: 50px;
+    height: 4px;
+    margin: 10px;
+    background-color: white;
+}
+
+div.mobile-nav button:hover span {
+    background-image: linear-gradient(to right, var(--pastelgreen), var(--pastelorange));
+}
+
+/* När menyn är aktiv */
+div.mobile-nav button.active .burger-bar {
+    background-image: linear-gradient(to right, var(--pastelgreen), var(--pastelorange));
+ 
+}
+div.mobile-nav button.active .burger-bar:first-child {
+    transform: translateY(14px) rotate(45deg);
+}
+div.mobile-nav button.active .burger-bar:nth-child(2) {
+    opacity: 0;
+}
+div.mobile-nav button.active .burger-bar:last-child {
+    transform: translateY(-14px) rotate(-45deg);
+}
+
+/* Mobilmeny innehåll */
+nav.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -5000%;
+    background-color: #333;
+    width: 50%;
+    height: 100%;
+    padding: 1em;
+    transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+}
+
+nav.mobile-menu.active {
+    right: 0;
+}
+
+nav.mobile-menu ul {
+    position: relative;
+    top: 3em;
+}
+
+
+/* Textinnehåll startsida */
+div.text-content {
+    max-width: 35em;
+    margin: 1.5em auto;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+main p:not(.no-top-margin) {
+    margin-top: 1em;
+}
+
+.boldtext {
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 1em;
+}
+
+/* Unordered listor i main */
+main ul li {
+    list-style-type: "\2606  ";
+    margin-left: 1.3em;
+    padding: 0.2em;
+}
+
+footer {
+    background-color: #333;
+    margin-top: 3em;
+    width: 100%;
+}
+
+footer img {
+    width: 200px;
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%);
+    margin: 1em 0 0 0;
+}
+footer p {
+    color: #ccc;
+    max-width: 35em;
+    margin: auto;
+    font-size: 0.8rem;
+    padding-bottom: 0.5em;
 }

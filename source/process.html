@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moment 1 | Frontend</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/hamburgare.js"></script>
 </head>
 
 <body>
@@ -15,9 +16,9 @@
             <div class="desktop-nav">
                 <nav class="desktop-menu">
                     <ul>
-                        <li class="menu-items" aria-current="page"><a href="index.html">Start</a></li>
+                        <li class="menu-items"><a href="index.html">Start</a></li>
                         <li class="menu-items"><a href="images.html">Bilder</a></li>
-                        <li class="menu-items"><a href="process.html">Arbetsprocess</a></li>
+                        <li class="menu-items"><a href="process.html" aria-current="page">Arbetsprocess</a></li>
                     </ul>
                 </nav>
             </div> <!-- Slut på desktop-nav -->
@@ -30,9 +31,9 @@
                 </button>
                 <nav class="mobile-menu">
                     <ul>
-                        <li class="menu-items" aria-current="page"><a href="index.html">Start</a></li>
+                        <li class="menu-items"><a href="index.html">Start</a></li>
                         <li class="menu-items"><a href="images.html">Bilder</a></li>
-                        <li class="menu-items"><a href="process.html">Arbetsprocess</a></li>
+                        <li class="menu-items"><a href="process.html" aria-current="page">Arbetsprocess</a></li>
                     </ul>
                 </nav>
             </div> <!-- Slut på mobile-nav -->
@@ -40,8 +41,42 @@
         <main>
             <div class="text-content">
                 <h1>Arbetsprocess</h1>
+                <p class="no-top-margin">
+                    För att lösa uppgiften har jag först tagit kameran (Lumix GH5) och tagit bilder på random saker i
+                    lägenheten. Jag har bildbehandlat och sparat ner till 2000x1127(ish) men har undvikit att komprimera
+                    filerna. Samtliga filer har sparats i jpg-format och har legat på en storlek på 1-2 MB.
+                </p>
+                <p>Med hjälp av Mattias video från momentets teorisektion har jag sedan skapat en mapp för hela mitt
+                    projekt och en undermapp som heter "Source". I source skapade jag tre html-filer och lade in mina
+                    grafikfiler. Sedan körde jag kommandot <code>npm init</code> och sedan
+                    <code>npm install parcel --save-dev</code>. Jag ändrade i script till att se ut som
+                    <code>script { "start": "parcel", "build": "parcel build" }</code> och sedan var det bara att köra
+                    igång med kommandot <code>npm start</code>.
+                </p>
+                <p>Direkt efteråt initierade jag ett nytt git-repo och har gjort lokala commits till en
+                    development-branch. Efter att startsidan
+                    och bilder-sidan kommit på plats skapade jag ett motsvarande repo på github och länkade samman dessa
+                    med <code>git remote add (url)</code>. Dit pushar jag när jag känner att jag har kommit en bit på
+                    vägen.</p>
+                <p>För att optimera bilder har jag, som i exemplet som anges i Parcels dokumentation, använt mig av
+                    <code>&lt;picture&gt;</code>-taggen. I den finns <code>&lt;source&gt;</code>-taggar med media
+                    queries, och sökvägen till bilden har tilläggen <code>"?as=(filändelse)&width=(storlek)"</code>.
+                </p>
+                <p>Parcel sköter det mesta självmant, som minifieringen av HTML, CSS och JavaScript. För att lösa
+                    bakåtkompabilitet har jag även här utgått från dokumentationen (<a
+                        href="https://parceljs.org/features/targets/" target="_blank">klicka här</a>) och lagt till
+                    <code>"browserslist": "> 0.5%, last 2 versions, not dead"</code> i min package.json-fil.
+                </p>
+                <p>Jag är osäker på bakåtkompabiliteten och att slå ihop
+                    flera filer (t ex js eller css). Jag vågade heller inte använda scss som jag brukar använda. Men GUD
+                    vilken skillnad att inte behöva komprimera bilderna själv! Nu hoppas jag bara att jag har gjort
+                    någorlunda rätt.</p>
             </div>
         </main>
+        <footer>
+            <img src="bilder/signature-gradient.svg" alt="signatur">
+            <p>Webbplats skapad av Saga Einarsdotter Kikajon för kursen DT211G - Frontend-baserad webbutveckling</p>
+        </footer>
     </div> <!-- Slut på wrapper -->
 </body>
 

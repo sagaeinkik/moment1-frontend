@@ -19,10 +19,12 @@ body {
     overflow-x: hidden;
     font-size: 1.1em;
     line-height: 1.9;
+    background-color: #333;
 }
 
 .wrapper {
     overflow-x: hidden;
+    background-color: white;
 }
 
 header {
@@ -90,9 +92,15 @@ div.text-content {
 }
 
 main p:not(.no-top-margin) {
-    margin-top: 1em;
+    margin-top: 1.5em;
 }
 
+main p a {
+    color: #333;
+}
+main p a:hover {
+    color: orange;
+}
 .boldtext {
     font-weight: bold;
 }
@@ -111,6 +119,11 @@ main ul li {
 main img {
     width: 100%;
     margin-top: 1em;
+}
+
+main code {
+    font-size: 1.1em;
+    background-color: #eee;
 }
 
 footer {

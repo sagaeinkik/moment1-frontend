@@ -44,31 +44,50 @@
                 <p class="no-top-margin">
                     För att lösa uppgiften har jag först tagit kameran (Lumix GH5) och tagit bilder på random saker i
                     lägenheten. Jag har bildbehandlat och sparat ner till 2000x1127(ish) men har undvikit att komprimera
-                    filerna. Samtliga filer har sparats i jpg-format och har legat på en storlek på 1-2 MB.
+                    filerna. Samtliga filer har sparats i jpg-format och har legat på en storlek på 1-2 MB. I övrigt har
+                    projektet gått som följande:
                 </p>
-                <p>Med hjälp av Mattias video från momentets teorisektion har jag sedan skapat en mapp för hela mitt
-                    projekt och en undermapp som heter "Source". I source skapade jag tre html-filer och lade in mina
-                    grafikfiler. Sedan körde jag kommandot <code>npm init</code> och sedan
-                    <code>npm install parcel --save-dev</code>. Jag ändrade i script till att se ut som
-                    <code>script { "start": "parcel", "build": "parcel build" }</code> och sedan var det bara att köra
-                    igång med kommandot <code>npm start</code>.
-                </p>
-                <p>Direkt efteråt initierade jag ett nytt git-repo och har gjort lokala commits till en
-                    development-branch. Efter att startsidan
-                    och bilder-sidan kommit på plats skapade jag ett motsvarande repo på github och länkade samman dessa
-                    med <code>git remote add (url)</code>. Dit pushar jag när jag känner att jag har kommit en bit på
-                    vägen.</p>
-                <p>För att optimera bilder har jag, som i exemplet som anges i Parcels dokumentation, använt mig av
-                    <code>&lt;picture&gt;</code>-taggen. I den finns <code>&lt;source&gt;</code>-taggar med media
-                    queries, och sökvägen till bilden har tilläggen <code>"?as=(filändelse)&width=(storlek)"</code>.
-                </p>
-                <p>Parcel sköter det mesta självmant, som minifieringen av HTML, CSS och JavaScript. För att lösa
-                    bakåtkompabilitet har jag även här utgått från dokumentationen (<a
-                        href="https://parceljs.org/features/targets/" target="_blank">klicka här</a>) och lagt till
-                    <code>"browserslist": "> 0.5%, last 2 versions, not dead"</code> i min package.json-fil.
-                </p>
+                <ol>
+                    <li>Jag skapade en mapp för hela mitt projekt, med en undermapp vid namn source. I den skapade jag
+                        tre HTML-filer med emmet-mallar, samt lade in mappen med mina grafikfiler. Jag skapade också en
+                        mapp för CSS och skapade en CSS-fil.</li>
+                    <li>I terminalen körde jag kommandot <code>npm init</code> och sedan
+                        <code>npm install parcel --save-dev</code>.
+                    </li>
+                    <li>I package.json-filen som skapas av parcel ändrade jag i script såhär:
+                        <code>"script" { "start": "parcel", "build": "parcel build" }</code>.
+                    </li>
+                    <li>I terminalen skrev jag kommandot <code>npm start</code> för att sätta igång byggandet.</li>
+                    <li>Jag initierade ett nytt git-repo med <code>git init</code>. I terminalen skrev jag också
+                        <code>$ echo .DS_STORE > .gitignore</code> för att skapa och lägga till en rad automatiskt.
+                        Sedan öppnade jag filen med <code>$ open .gitignore</code> för att också lägga till
+                        <code>.parcel-cache</code>, <code>node_modules</code> och <code>dist</code>. Dist lade jag till
+                        för att Mattias nämnde det som hastigast i videon under Teori och läsanvisningar för momentet.
+                    </li>
+                    <li>Jag skrev kommandot <code>git checkout -b development</code> för att skapa en ny branch och byta
+                        till den i samma veva.</li>
+                    <li>Vid det här stadiet hade jag börjat bygga mina HTML-filer och CSS-filen samt en liten
+                        JavaScript-funktionalitet för menyknappen. Jag gjorde regelbunda commits lokalt.</li>
+                    <li>När jag kände att jag hade kommit till en bra punkt skapade jag ett nytt repo på Github, och i
+                        terminalen skrev jag <code>$ git add remote (url:en)</code>. När det var klart skrev jag
+                        <code>$ git push origin development</code>.
+                    </li>
+                    <li>För att optimera bilderna har jag, som i exemplet i Parcels dokumentation, använt mig av
+                        <code>&lt;picture&gt;</code>-taggen. I den finns <code>&lt;source&gt;</code>-taggar med media
+                        queries, och sökvägen till bilden har tilläggen <code>"?as=(filändelse)&width=(storlek)"</code>.
+                        Jag har använt 2 olika storlekar, med tre olika filformat.
+                    </li>
+                    <li>För att lösa bakåtkompabiliteten utgick jag återigen från dokumentationen (<a
+                            href="https://parceljs.org/features/targets/" target="_blank">klicka här</a>) och lagt till
+                        <code>"browserslist": "> 0.5%, last 2 versions, not dead"</code> i package.json-filen.
+                    </li>
+                </ol>
+                <p>I övrigt ska Parcel, som jag har förstått det, sköta mycket automatiskt. Jag behöver alltså inte
+                    lägga till någonting för att filerna ska minifieras vid publicering.</p>
                 <p>Jag är osäker på bakåtkompabiliteten och att slå ihop
-                    flera filer (t ex js eller css). Jag vågade heller inte använda scss som jag brukar använda. Men GUD
+                    flera filer (t ex js eller css). Jag vågade heller inte använda scss som jag brukar använda (vilket
+                    jag ångrar nu &ndash; vad jobbigt det är att gå tillbaka till vanlig css efter att man har vant sig
+                    vid nesting!) Men GUD
                     vilken skillnad att inte behöva komprimera bilderna själv! Nu hoppas jag bara att jag har gjort
                     någorlunda rätt.</p>
             </div>

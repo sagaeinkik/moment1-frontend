@@ -95,10 +95,10 @@ main p:not(.no-top-margin) {
     margin-top: 1.5em;
 }
 
-main p a {
+main ol li a {
     color: #333;
 }
-main p a:hover {
+main ol li a:hover {
     color: orange;
 }
 .boldtext {
@@ -115,7 +115,12 @@ main ul li {
     margin-left: 1.3em;
     padding: 0.2em;
 }
-
+/* Ordered listor i main (under arbetsprocess) */
+main ol li {
+    margin-top: 1em;
+    margin-left: 1em;
+    list-style: decimal;
+}
 main img {
     width: 100%;
     margin-top: 1em;
@@ -226,5 +231,52 @@ footer p {
     nav.mobile-menu ul {
         position: relative;
         top: 3em;
+    }
+}
+
+@media (max-width: 640px) {
+    nav.mobile-menu {
+        width: 100%;
+    }
+    nav.mobile-menu ul li {
+        margin: 4em 2em;
+    }
+    main .text-content {
+        padding: 0 1em;
+    }
+    main .text-content p,
+    main .text-content ol li,
+    main .text-content ul li,
+    main .text-content code {
+        font-size: 1rem;
+    }
+    main h1 {
+        font-size: 1.7em;
+    }
+    main h2 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 500px) {
+    #logotyp {
+        width: 100px;
+    }
+    div.mobile-nav button {
+        right: 1em;
+    }
+    div.mobile-nav button .burger-bar {
+        width: 40px;
+        height: 3px;
+        margin: 7px;
+    }
+    div.mobile-nav button.active .burger-bar:first-child {
+        transform: translateY(10px) rotate(225deg);
+    }
+    div.mobile-nav button.active .burger-bar:last-child {
+        transform: translateY(-10px) rotate(-225deg);
+    }
+    footer {
+        padding: 1em;
     }
 }

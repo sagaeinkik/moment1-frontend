@@ -81,6 +81,10 @@
                             href="https://parceljs.org/features/targets/" target="_blank">klicka här</a>) och lagt till
                         <code>"browserslist": "> 0.5%, last 2 versions, not dead"</code> i package.json-filen.
                     </li>
+                    <li>När sidan var redo för publicering använde jag Netlify för vara host. Netlify fyllde automatiskt
+                        i att dist-katalogen skulle vara default, och npm run build var också redan inskrivet. Det var
+                        bara att trycka på deploy och vänta med andan i halsen. (Jag var tvungen att byta filnamn på
+                        bilderna för att få det att funka). </li>
                 </ol>
                 <p>I övrigt ska Parcel, som jag har förstått det, sköta mycket automatiskt. Jag behöver alltså inte
                     lägga till någonting för att filerna ska minifieras vid publicering.</p>

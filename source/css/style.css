@@ -1,15 +1,19 @@
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Sometype+Mono&display=swap');
+/* Färgvariabler */
 :root {
     --pastelgreen: #d1e5a5;
     --pastelorange: #f7d890;
 }
 
+/* Nollställ margin och padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Bredd, maxbredd, höjd på body: typsnitt och storlekar. Generella regler alltså */
 body {
     width: 100%;
     max-width: 1900px;
@@ -22,11 +26,13 @@ body {
     background-color: #333;
 }
 
+/* Overflow-x på wrapper så att inte telefonen får en scrollbar */
 .wrapper {
     overflow-x: hidden;
     background-color: white;
 }
 
+/* Header på varje sida: fördela jämnt som flex */
 header {
     padding: 0 1em;
     display: flex;
@@ -41,6 +47,7 @@ header {
     margin-top: 0.5em;
 }
 
+/* Menylänkarna */
 nav ul li {
     list-style: none;
     margin: 1em;
@@ -53,6 +60,7 @@ nav ul li a {
     border-radius: 15px;
     transition: 0.5s ease;
 }
+/* bakgrundsfärg som är gradient vid hovring */
 nav ul li a:hover {
     color: black;
     border-radius: 15px;
@@ -63,13 +71,14 @@ nav ul li a:hover {
     );
     text-decoration: underline;
 }
-
+/* Nuvarande sida får markering */
 nav ul li a[aria-current='page'] {
     text-decoration: underline;
 }
 
 /* Desktop-meny */
 header .desktop-nav ul {
+    /* Även denna ska vara flex */
     display: flex;
     justify-content: space-evenly;
 }
@@ -79,64 +88,76 @@ div.mobile-nav {
     display: none;
 }
 
+/* Rubriker */
 h1,
 h2,
 h3 {
     font-family: Poppins, Arial, Helvetica, sans-serif;
 }
+/* Luft upptill för h2 */
+h2 {
+    margin-top: 1em;
+}
+
 /* Textinnehåll startsida */
 div.text-content {
+    /* Maxbredd så det inte blir för långa rader */
     max-width: 35em;
     margin: 1.5em auto;
     font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
+/* Luft upptill förutom för första p-elementet under rubriker */
 main p:not(.no-top-margin) {
     margin-top: 1.5em;
 }
 
+/* Länk på sidan för arbetsprocess */
 main ol li a {
     color: #333;
 }
 main ol li a:hover {
     color: orange;
 }
+/* Fetstilt */
 .boldtext {
     font-weight: bold;
 }
 
-h2 {
-    margin-top: 1em;
-}
-
 /* Unordered listor i main */
 main ul li {
+    /* En liten stjärna som listpunkt */
     list-style-type: '\2606  ';
     margin-left: 1.3em;
     padding: 0.2em;
 }
+
 /* Ordered listor i main (under arbetsprocess) */
 main ol li {
     margin-top: 1em;
     margin-left: 1em;
     list-style: decimal;
 }
-main img {
-    width: 100%;
-    margin-top: 1em;
-}
-
+/* Kod-taggarna */
 main code {
     font-size: 1.1em;
     background-color: #eee;
 }
 
+/* Bilderna på bilder-sidan */
+main img {
+    width: 100%;
+    margin-top: 1em;
+}
+
+/* Footer får bredd och färg samt luft upptill */
 footer {
     background-color: #333;
     margin-top: 3em;
     width: 100%;
 }
 
+/* Den lilla sk-signaturen i footern centreras */
 footer img {
     width: 200px;
     position: relative;
@@ -144,6 +165,7 @@ footer img {
     transform: translateX(-50%);
     margin: 1em 0 0 0;
 }
+/* Texten med credits */
 footer p {
     color: #ccc;
     max-width: 35em;
@@ -152,7 +174,9 @@ footer p {
     padding-bottom: 0.5em;
 }
 
+/* MEDIA QUERIES */
 @media (max-width: 750px) {
+    /* Justera avstånden istället för space-evenly */
     header {
         justify-content: space-between;
     }
@@ -164,6 +188,7 @@ footer p {
     div.mobile-nav {
         display: initial;
     }
+    /* Själva knappen stylas så den inte ser ut som en knapp längre, och läggs över allt annat */
     div.mobile-nav button {
         width: fit-content;
         border: none;
@@ -173,17 +198,20 @@ footer p {
         z-index: 1;
         right: 2em;
     }
+    /* Span-elementen som utgör bröd och kött i hamburgaren */
     div.mobile-nav button .burger-bar {
+        /* Staplas ovanpå varandra, får bredd och höjd samt färg så de syns */
         display: block;
         width: 50px;
         height: 4px;
         margin: 10px;
         background-color: white;
+        /* Transition för rotationens skull */
         transition: 0.3s ease;
         -moz-transition: 0.3s ease;
         -webkit-transition: 0.3s ease;
     }
-
+    /* Bakgrundsfärg när man hovrar över knappen */
     div.mobile-nav button:hover .burger-bar {
         background-image: linear-gradient(
             to right,
@@ -192,14 +220,16 @@ footer p {
         );
     }
 
-    /* När menyn är aktiv */
+    /* När menyn är aktiv: */
     div.mobile-nav button.active .burger-bar {
+        /* Ge fin bakgrundsfärg */
         background-image: linear-gradient(
             to right,
             var(--pastelgreen),
             var(--pastelorange)
         );
     }
+    /* Rotera 1a och 3e strecket, dölj mittersta strecket */
     div.mobile-nav button.active .burger-bar:first-child {
         transform: translateY(14px) rotate(225deg);
     }
@@ -214,20 +244,22 @@ footer p {
     nav.mobile-menu {
         position: fixed;
         top: 0;
+        /* Skicka ut den till höger när den inte används */
         right: -500%;
         background-color: #333;
         width: 50%;
         height: 100%;
         padding: 1em;
+        /* Transition så den kan glida in från sidan */
         transition: 0.3s ease;
         -moz-transition: 0.3s ease;
         -webkit-transition: 0.3s ease;
     }
-
+    /* Plocka in den på skärmen när den är aktiv */
     nav.mobile-menu.active {
         right: 0;
     }
-
+    /* Flytta ner listan lite */
     nav.mobile-menu ul {
         position: relative;
         top: 3em;
@@ -235,15 +267,18 @@ footer p {
 }
 
 @media (max-width: 640px) {
+    /* Bredda menyn så den täcker hela skärmen */
     nav.mobile-menu {
         width: 100%;
     }
     nav.mobile-menu ul li {
         margin: 4em 2em;
     }
+    /* Padding på all text */
     main .text-content {
         padding: 0 1em;
     }
+    /* Minska textstorlekar för mobilskärm */
     main .text-content p,
     main .text-content ol li,
     main .text-content ul li,
@@ -259,17 +294,21 @@ footer p {
 }
 
 @media (max-width: 500px) {
+    /* Minska logotypen */
     #logotyp {
         width: 100px;
     }
+    /* Positionera om knappen */
     div.mobile-nav button {
         right: 1em;
     }
+    /* Gör hamburgaren lite mindre */
     div.mobile-nav button .burger-bar {
         width: 40px;
         height: 3px;
         margin: 7px;
     }
+    /* Justera om rotationen då hamburgaren har blivit mindre */
     div.mobile-nav button.active .burger-bar:first-child {
         transform: translateY(10px) rotate(225deg);
     }
